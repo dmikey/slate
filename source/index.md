@@ -2,13 +2,10 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.paypal.com/chemical/chemical/'>Get Source</a>
 
 includes:
   - errors
@@ -18,44 +15,43 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to Chemical. Chemical is a UI framework that lets you take as little, or as much as you would like.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Chemical provides CSS if all you want is some styles to get you moving. We also provide Stylus files, to preprocess with your project.
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+For those who want more control, we provide isomorphic vanilla javascript objects, that help you draw server side views, and quickly paint those views to the screen.
 
-# Authentication
+Chemical providers a number of UI widgets, drawing components, a client side router, and ajax. There is no data binding here, or cruft. Emphasis is on building ultra fast and beautiful applications.
 
-> To authorize, use this code:
+# Base
 
-```ruby
-require 'kittn'
+> Create a Base object
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```javascript
+var Base = require('chemical/base');
+
+
+var base = new Base(function (data){
+    return '<span>' + data.foo + '</span>'
+},{
+    foo: 'bar'
+});
+
+base.renderInto(document.body);
 ```
 
-```python
-import kittn
+Chemical's main theme, is to stay away from getting in the way of your code, and the browser. We want you to make ultra fast applications, and understand what you are doing.
 
-api = kittn.authorize('meowmeowmeow')
-```
+In Chemical, `Base` is a constructor, that holds some information and has some helper functions about what you want to render.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+We provide `Base`, so you can start drawing to the DOM and rendering in NodeJS out of the box.
 
-> Make sure to replace `meowmeowmeow` with your API key.
+`Base` accepts two arguments. A `templating Function` and some `data`.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+You can provide any kind of template function, Chemical recommends you use `Underscore` to `JavaScript Templates`, or compiling your `Dust` templates, if you want to make your own widgets using clean HTML seperation.
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+    You can use base, to create your own reusable widgets!
 </aside>
 
 # Kittens
