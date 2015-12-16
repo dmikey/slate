@@ -23,13 +23,23 @@ For those who want more control, we provide isomorphic vanilla javascript object
 
 Chemical providers a number of UI widgets, drawing components, a client side router, and ajax. There is no data binding here, or cruft. Emphasis is on building ultra fast and beautiful applications.
 
+# Basics
+
+Chemical tries to help alleviate some of the strain when building a UI. We provide a few out of the box components, that will help you draw a UI.
+
+Chemical recommends one way data binding, being aware of your application state, and tries to provide minimal UI plumbing to ensure you can develop an ultra fast, and ultra light UI.
+
+Chemical recommends you use `browserify` or `webpack` to bundle your application. This way, your app only brings the exact parts of Chemical along, that it needs.
+
+When creating new widgets or components, Chemical has chosen to only be of the opinion that we require a `templating function` that is passed an `object literal` to use for filling data into the template. Later on you can learn some of our techniques for creating seamless HTML to ultra fast compiled JS templates.
+
+
 # Base
 
 > Create a Base object
 
 ```javascript
 var Base = require('chemical/base');
-
 
 var base = new Base(function (data){
     return '<span>' + data.foo + '</span>'
