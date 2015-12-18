@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Chemical UI Framework</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="javascripts/all.js" type="text/javascript"></script>
 
       <script>
         $(function() {
-          setupLanguages(["shell","ruby","python"]);
+          setupLanguages(["html","javascript"]);
         });
       </script>
   </head>
@@ -28,9 +28,8 @@
     <div class="tocify-wrapper">
       <img src="images/logo.png" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="html">html</a>
+              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -39,217 +38,298 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.paypal.com/chemical/chemical/'>Get Source</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id="introduction">Introduction</h1>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Welcome to Chemical. Chemical UI Framework lets you take as little, or as much as you want.</p>
 
-<p>This example API documentation page was created with <a href="http://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Chemical provides CSS if all you want is CSS styles to get moving. We also provide Stylus files, to preprocess with your project.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
+<p>For those who want more control, we provide isomorphic vanilla javascript objects that help you draw server side views, and quickly paint those same views to the screen on the client.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight shell"><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<p>Chemical providers a number of UI widgets, drawing components, a client side router, and ajax. There is no data binding here, or cruft. Emphasis is on building ultra fast and beautiful applications.</p>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+<p>Include Chemical In your Project to get started</p>
 </blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<p><aside class="notice">
-You must replace <code class="prettyprint">meowmeowmeow</code> with your personal API key.
-</aside></p>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
+<pre class="highlight html"><code>npm install chemical --save
 </code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
+<pre class="highlight javascript"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">chemical</span> <span class="o">--</span><span class="nx">save</span>
+</code></pre>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<aside class="notice">
+    If you are working with Chemical in JavaScript, we recommend you use webpack or browserify to build your application
+</aside>
+
+<aside class="notice">
+    You can use <a href="http://stuk.github.io/require1k/" target="_blank">Require1k.js</a> to work with your application code unbuilt in the browser!
+</aside>
+
+<h1 id="style-only">Style Only</h1>
+
+<p>We get it. Sometimes you just want to create a beautiful interface, but on your terms. Maybe you don&rsquo;t want our resets/normalizers, maybe you do.</p>
+
+<p>We provide a built and minified version of our CSS Framework. You can use these in your pages to start right away. They come with all of our widgets out of the box! You can find them in HTML Samples tab!</p>
+
+<p>You also have access to our Stylus files. So if you want to can bring along exactly the styles you use for your application!</p>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Include Chemical In your Project</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
+<pre class="highlight html"><code>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"./node_modules/chemical/chemical.css"</span><span class="nt">/&gt;</span>
 
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://example.com/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<p><aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside></p>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
+<pre class="highlight javascript"><code><span class="c1">// For Webpack</span>
+<span class="c1">//</span>
+<span class="c1">// install an appropriate loader for stylus</span>
+<span class="c1">// require the node module, and the widget style</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://example.com/api/kittens/3"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<span class="c1">// require only a single widget</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/button.styl'</span><span class="p">);</span>
+
+<span class="c1">// or load everything</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/chemical.styl'</span><span class="p">);</span>
 </code></pre>
 
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h1 id="the-basics">The Basics</h1>
 
-<p>This endpoint retrieves a specific kitten.</p>
+<p>Chemical tries to help alleviate some of the strain when building a UI. We provide a few out of the box components, that will help you draw a UI.</p>
 
-<p><aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside></p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the cat to retrieve</td>
-</tr>
-</tbody></table>
+<p>Chemical recommends one way data binding, being aware of your application state, and tries to provide minimal UI plumbing to ensure you can develop an ultra fast, and ultra light UI.</p>
 
-          <h1 id='errors'>Errors</h1>
-<p><aside class="notice">This error section is stored in a separate file in <code class="prettyprint">includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the <code class="prettyprint">includes</code> folder and add them to the top of your <code class="prettyprint">index.md</code>&rsquo;s frontmatter. Files are included in the order listed.</aside></p>
+<p>Chemical recommends you use <code class="prettyprint">browserify</code> or <code class="prettyprint">webpack</code> to bundle your application. This way, your app only brings the exact parts of Chemical along, that it needs.</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>When creating new widgets or components, Chemical has chosen to only be of the opinion that we require a <code class="prettyprint">templating function</code> that is passed an <code class="prettyprint">object literal</code> to use for filling data into the template. Later on you can learn some of our techniques for creating seamless HTML to ultra fast compiled JS templates.</p>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slown down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
+<h1 id="components">Components</h1>
+
+<h2 id="anchor">Anchor</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Anchor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/anchor'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">anchor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Anchor</span><span class="p">({</span>
+    <span class="na">content</span><span class="p">:</span> <span class="s1">'my anchor tag'</span><span class="p">,</span>
+    <span class="na">href</span><span class="p">:</span> <span class="s1">'#'</span>
+<span class="p">});</span>
+
+<span class="nx">anchor</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chemical-anchor"</span><span class="nt">&gt;</span>my anchor tag<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+
+<p>Use an anchor tag to create hyperlinks to other pages or routes</p>
+
+<p><a href="#" class="chemical-anchor">my anchor tag</a></p>
+
+<h2 id="button">Button</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Button</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/button'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Button</span><span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="s1">'myButton'</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="s1">'my anchor tag'</span><span class="p">,</span>
+    <span class="na">brand</span><span class="p">:</span> <span class="s1">'default'</span><span class="p">,</span>
+    <span class="na">block</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+
+<span class="nx">button</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"chemical-button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- make the button take the full width --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"chemical-button block"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+</code></pre>
+
+<p>Use a button for user interaction inside your application.</p>
+
+<p><button id="button" class="chemical-button">Button</button></p>
+
+<p>Block width buttons</p>
+
+<p><button id="button" class="chemical-button block">Button</button></p>
+
+<h2 id="image">Image</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Image</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/image'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">({</span>
+    <span class="na">src</span><span class="p">:</span> <span class="s1">'https://www.placecage.com/c/460/300'</span><span class="p">,</span>
+    <span class="na">responsive</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+
+<span class="nx">image</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.placecage.com/c/460/300"</span> <span class="na">class=</span><span class="s">"chemical-image"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- make the image take the full width --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.placecage.com/c/460/300"</span> <span class="na">class=</span><span class="s">"chemical-image responsive"</span><span class="nt">&gt;</span>
+</code></pre>
+
+<p>Use images inside your application.</p>
+
+<p><img src="https://www.placecage.com/200/300" class="chemical-image"></p>
+
+<p>Responsive width images</p>
+
+<p><img src="https://www.placecage.com/c/460/300" class="chemical-image responsive"></p>
+
+<h2 id="input">Input</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Input</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/input'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Input</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'text'</span><span class="p">,</span>
+    <span class="na">placeholder</span><span class="p">:</span> <span class="s1">'my placeholder'</span><span class="p">,</span>
+    <span class="na">block</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+
+<span class="nx">input</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- make the image take the full width --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span> <span class="na">class=</span><span class="s">"block"</span><span class="nt">&gt;</span>
+</code></pre>
+
+<p>Inputs inside your application.</p>
+
+<p><input type="email" placeholder="Email"></p>
+
+<p>Full width input</p>
+
+<p><input type="email" placeholder="Email" class="block"></p>
+
+<h2 id="progress">Progress</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Progress</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/progress'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">progress</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Progress</span><span class="p">({</span>
+    <span class="na">brand</span><span class="p">:</span> <span class="s1">'default'</span><span class="p">,</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">50</span>
+<span class="p">});</span>
+
+<span class="nx">progress</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chemical-progress"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"width: 15%; height:15px;"</span> <span class="na">class=</span><span class="s">"chemical-progress-fill"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+<div class="chemical-progress" style="width:48%;margin-left:1%;margin-top:10px;clear:none;">
+    <div style="width: 15%; height:15px;" class="chemical-progress-fill"></div>
+</div>
+
+<h2 id="spinner">Spinner</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Spinner</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/spinner'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">spinner</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Spinner</span><span class="p">({</span>
+    <span class="na">brand</span><span class="p">:</span> <span class="s1">'default'</span>
+<span class="p">});</span>
+
+<span class="nx">spinner</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chemical-overlay"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chemical-spinner"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+<div class="chemical-overlay" style="clear:none;width:50%">
+          <div class="chemical-spinner"></div>
+</div>
+
+<h2 id="table">Table</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Table</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/table'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'First Name'</span><span class="p">,</span> <span class="s1">'Last Name'</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'Doe'</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'Sue'</span><span class="p">,</span> <span class="s1">'Shei'</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'Brian'</span><span class="p">,</span> <span class="s1">'Schpellchek'</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'Indigo'</span><span class="p">,</span> <span class="s1">'Violet'</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Table</span><span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="s1">'table'</span><span class="p">,</span>
+    <span class="na">brand</span><span class="p">:</span> <span class="nx">brand</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="nx">content</span><span class="p">,</span>
+    <span class="na">responsive</span><span class="p">:</span> <span class="s1">'responsive'</span><span class="p">,</span>
+    <span class="na">bordered</span><span class="p">:</span> <span class="s1">'bordered'</span><span class="p">,</span>
+    <span class="na">striped</span><span class="p">:</span> <span class="s1">'striped'</span>
+<span class="p">});</span>
+
+<span class="nx">table</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table"</span> <span class="na">class=</span><span class="s">"chemical-table responsive bordered striped"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tbody&gt;</span>
+          <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Atomic Number<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Symbol<span class="nt">&lt;/th&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+          <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>H<span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+          <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>C<span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+
+<table id="table" class="chemical-table bordered striped">
+      <tbody>
+          <tr>
+            <th>Atomic Number</th>
+            <th>Symbol</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>H</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>C</td>
+          </tr>
+      </tbody>
+</table>
+
+<h2 id="text">Text</h2>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Text</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chemical/text'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Text</span><span class="p">({</span>
+    <span class="na">brand</span><span class="p">:</span> <span class="s1">'default'</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="s1">'foo bar'</span>
+<span class="p">});</span>
+
+<span class="nx">text</span><span class="p">.</span><span class="nx">renderInto</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</code></pre>
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chemical-text default"</span><span class="nt">&gt;</span>foo bar<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+<p>Several text block styles</p>
+
+<div class="chemical-text default" style="clear:none;padding-left:5px">foo bar</div>
+
+<div class="chemical-text warn" style="clear:none;padding-left:5px">foo bar</div>
+
+          <h1 id="tutorials">Tutorials</h1>
+
+<h2 id="your-first-widget">Your first Widget</h2>
+
+<p>Some Stuff</p>
+
+<h2 id="your-first-app">Your first App</h2>
+
+<p>Other Stuff</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="html">html</a>
+                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
